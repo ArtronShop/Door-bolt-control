@@ -1,0 +1,96 @@
+﻿<!doctype html>
+<html>
+  <head>
+    <title>Door Lock By IOXhop.con</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="js/jquery-3.2.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="popup.js"></script>
+    <style>
+	section {	
+		width: 400px;
+		margin: auto;
+		text-align: center;
+	}
+	
+	#alertMsg {
+		padding: 0 20px;
+		text-align: left;
+	}
+	
+	button {
+		background: none;
+		padding: 10px;
+		border: none;
+		outline: none;
+	}
+	
+	button > img {
+		width: 80px;
+		height: auto;
+		opacity: 0.6;
+	}
+	
+	button:hover > img, button.focus > img {
+		opacity: 1;
+	}
+	
+	button.focus > img {
+		box-shadow: 0 0 10px rgb(0, 0, 0);
+		border-radius: 100%;
+	}
+	
+	footer {
+		background: #E5E5E5;
+		padding: 10px 0;
+		margin-top: 20px;
+		font-size: 12px;
+		border-top: 1px solid #bfbfbf;
+	}
+	</style>
+  </head>
+  <body>
+    <section>
+      <h1>Control your door bolt</h1>
+      <div id="alertMsg"></div>
+      <button id="lock"><img src="img/lock-icon.png" alt="" /></button>
+	  <button id="unlock"><img src="img/unlock-icon.png" alt="" /></button>
+      <footer>
+        <span><a href="#" id="openSetting">Settings</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;Door bolt control By <a href="http://www.ioxhop.com/" target="_blank">IOXhop.com</a></span>
+      </footer>
+    </section>
+    
+    
+    <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Settings</h4>
+          </div>
+          <div class="modal-body">
+            <form class="form-horizontal" id="formSettings">
+              <fieldset>
+                <div class="form-group">
+                  <label for="settings-host" class="col-md-2 control-label">Host</label>
+                  <div class="col-md-10">
+                    <input type="text" class="form-control" id="settings-host" required>
+                  </div>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" id="settings-auto-lock"> Auto lock on use "Private Browsing"
+                  </label>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="save-settings">Save</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+  </body>
+</html>
